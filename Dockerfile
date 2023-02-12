@@ -1,7 +1,7 @@
 FROM ghcr.io/linuxserver/baseimage-rdesktop-web:focal
 
-LABEL org.opencontainers.image.authors="github@sytone.com"
-LABEL org.opencontainers.image.source="https://github.com/sytone/obsidian-remote"
+LABEL org.opencontainers.image.authors="mort666@virus.org"
+LABEL org.opencontainers.image.source="https://github.com/mort666/obsidian-remote"
 LABEL org.opencontainers.image.title="Container hosted Obsidian MD"
 LABEL org.opencontainers.image.description="Hosted Obsidian instance allowing access via web browser"
 
@@ -24,12 +24,12 @@ RUN \
         /tmp/*
 
 # set version label
-ARG OBSIDIAN_VERSION=0.15.9
+ARG OBSIDIAN_VERSION=1.1.9
 
 RUN \
     echo "**** download obsidian ****" && \
         curl \
-        https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/Obsidian-$OBSIDIAN_VERSION.AppImage \
+        https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VERSION}/Obsidian-${OBSIDIAN_VERSION}.AppImage \
         -L \
         -o obsidian.AppImage
 
